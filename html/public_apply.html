@@ -61,6 +61,10 @@
             text-align: center;
             line-height: .88rem;
         }
+        
+        .apply_bottom.onSure {
+            opacity: 1;
+        }
     </style>
 </head>
 
@@ -90,31 +94,60 @@
             var typeCode = GetQueryString('typeCode');
             if (typeCode == 1) {
                 $('#otherName').attr('placeholder', '企业名称');
+                sureBtn1();
             }
             else if (typeCode == 2) {
                 $('#otherName').attr('placeholder', '知识产权名称');
+                sureBtn1();
             }
             else if (typeCode == 3) {
                 $('#otherName').attr('placeholder', '项目名称');
+                sureBtn1();
             }
             else if (typeCode == 4) {
                 $('#otherName').attr('placeholder', '技术名称');
+                sureBtn1();
             }
             else {
                 $('.inputBox:last-child').hide();
                 $('.inputBox').eq(1).css({
                     'width': 6.4 + 'rem'
                     , 'padding-left': .2 + 'rem'
-                })
+                });
+                sureBtn2();
+            }
+
+            function sureBtn1() {
+                $('input').bind("input propertychange", function () {
+                    if ($('#name').val() != '' && $('#phone').val() != '' && $('#otherName').val() != '') {
+                        $('.apply_bottom').addClass('onSure');
+                    }
+                    else {
+                        $('.apply_bottom').removeClass('onSure');
+                    }
+                });
+            }
+
+            function sureBtn2() {
+                $('input').bind("input", function () {
+                    if ($('#name').val() != '' && $('#phone').val() != '') {
+                        $('.apply_bottom').addClass('onSure');
+                    }
+                    else {
+                        $('.apply_bottom').removeClass('onSure');
+                    }
+                });
             }
             //提交按钮
             $('.apply_bottom').click(function () {
-                $.popupCover({
-                    "content": "提交成功"
-                    , "callback": function () {
-                        javascript: history.back(-1);
-                    }
-                })
+                if ($(this).hasClass('onSure')) {
+                    $.popupCover({
+                        "content": "提交成功"
+                        , "callback": function () {
+                            javascript: history.back(-1);
+                        }
+                    })
+                }
             })
         })(jQuery);
     </script>
