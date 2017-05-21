@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta name="format-detection" content="telephone=no" />
+    <script src="../js/src/htmlrem.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/resetapp.css">
+    <link rel="stylesheet" type="text/css" href="../css/public_list.css">
+    <title>竞价转让-知识产权详情</title>
+    <style type="text/css">
+        .header p {
+            width: 100%;
+            height: 100%;
+            line-height: .88rem;
+            text-align: center;
+            font-size: .32rem;
+            color: white;
+        }
+        /*wrapper*/
+        
+        #wrapper {
+            overflow-y: scroll;
+            font-size: .24rem
+        }
+        
+        .banner {
+            width: 100%;
+            height: 4.1rem;
+        }
+        
+        .banner img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .centerBox {
+            width: 100%;
+            background: white;
+            margin-bottom: .2rem;
+            overflow: hidden;
+        }
+        
+        .centerBox h3 {
+            width: 100%;
+            height: .8rem;
+            font-size: .28rem;
+            line-height: .8rem;
+            border-bottom: .02rem solid #eee;
+            text-indent: .2rem;
+        }
+        /*center1*/
+        
+        .center1 .title {
+            margin-top: .3rem;
+            font-size: .34rem;
+            line-height: .5rem;
+            padding: 0 .2rem;
+            /*
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+*/
+        }
+        
+        .center1>div {
+            margin: .2rem 0 .35rem;
+        }
+        
+        .center1>div p {
+            font-size: .24rem;
+            color: #9a9a9a;
+            line-height: .5rem;
+            padding: 0 .2rem;
+        }
+        
+        .center1>div p b {
+            color: #666;
+        }
+        
+        .center1>div p span {
+            display: inline-block;
+            width: 50%;
+        }
+        
+        .center1>div p i {
+            color: #2684a6;
+        }
+        /*center2*/
+        
+        .center2 .content {
+            margin: .38rem 0;
+            font-size: .24rem;
+            color: #666;
+            line-height: .48rem;
+            padding: 0 .2rem;
+        }
+        /*center3*/
+        
+        .center3>div {
+            margin: .45rem 0;
+        }
+        
+        .center3>div img {
+            margin: .05rem auto;
+            display: block;
+            width: 6rem;
+        }
+        /*center4*/
+        
+        .center4 ul {
+            width: 6rem;
+            margin: .5rem auto .18rem;
+            overflow: hidden;
+        }
+        
+        .center4 ul li {
+            float: left;
+            width: 1.99rem;
+            height: 1.38rem;
+            text-align: center;
+            padding-right: .18rem;
+            padding-top: .4rem;
+            margin-bottom: .22rem;
+        }
+        
+        .center4 ul li:nth-of-type(1) {
+            background: url('../images/pic_step1.png') no-repeat;
+            background-size: 100% 100%;
+        }
+        
+        .center4 ul li:nth-of-type(2) {
+            background: url('../images/pic_step2.png') no-repeat;
+            background-size: 100% 100%;
+        }
+        
+        .center4 ul li:nth-of-type(3) {
+            background: url('../images/pic_step3.png') no-repeat;
+            background-size: 100% 100%;
+        }
+        
+        .center4 ul li:nth-of-type(4) {
+            background: url('../images/pic_step4.2.png') no-repeat;
+            background-size: 100% 100%;
+            padding-top: .2rem;
+        }
+        
+        .center4 ul li:nth-of-type(5) {
+            background: url('../images/pic_step5.png') no-repeat;
+            background-size: 100% 100%;
+            padding-right: 0;
+        }
+        
+        .center4 p {
+            padding: 0 .2rem;
+            line-height: .48rem;
+            margin-bottom: .3rem;
+        }
+        /*center5*/
+        
+        .center5 table {
+            width: 6rem;
+            margin: .26rem auto .3rem;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        
+        .center5 table caption {
+            text-align: center;
+            height: .72rem;
+            line-height: .72rem;
+        }
+        
+        .center5 table tbody {
+            display: table-row-group;
+            vertical-align: middle;
+            border-color: inherit;
+        }
+        
+        .center5 table tr {
+            display: table-row;
+            vertical-align: inherit;
+            border-color: inherit;
+        }
+        
+        .center5 table td {
+            border: 1px solid #e8e8e8;
+        }
+        
+        .center5 table td:nth-of-type(1) {
+            background: #f7f7f7;
+            text-align: right;
+            padding-right: .3rem;
+        }
+        
+        .center5 table td:nth-of-type(2) {
+            padding-left: .3rem;
+        }
+        
+        .center5 table tr:nth-of-type(1) {
+            height: 1.1rem;
+        }
+        
+        .center5 table tr:nth-of-type(2) {
+            height: .55rem;
+        }
+        
+        .center5>p {
+            padding: 0 .2rem;
+            line-height: .48rem;
+            color: #666;
+        }
+        
+        .center5>p span {
+            color: #272727;
+        }
+        /*center6*/
+        
+        .center6 p {
+            padding: 0 .2rem;
+            margin: .45rem 0 .4rem 0;
+            line-height: .48rem;
+        }
+        /*center7*/
+        
+        .center7 table {
+            width: 6rem;
+            margin: .26rem auto .3rem;
+            border-collapse: collapse;
+            border-spacing: 0;
+            text-align: center;
+            color: #666;
+        }
+        
+        .center7 table tr:nth-child(1) {
+            background: #f7f7f7;
+            font-size: .24rem;
+            color: #272727;
+        }
+        
+        .center7 table td {
+            border: 1px solid #e8e8e8;
+            height: .55rem;
+            line-height: .55rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header head_sou">
+            <div class="backBtn"></div>
+            <p>竞价转让详情</p>
+            <div class="menuBtn"></div>
+        </header>
+        <main id="wrapper">
+            <div class="iscroll">
+                <div class="ajaxCenter"> </div>
+                <div class="centerBox center4">
+                    <h3>交易流程</h3>
+                    <ul>
+                        <li> 买家选
+                            <br>专利/技术 </li>
+                        <li> 三方
+                            <br>沟通/确认交易 </li>
+                        <li> 平台
+                            <br>办理过户手续 </li>
+                        <li> 买家接受
+                            <br>专利证书/技术
+                            <br>转让文档 </li>
+                        <li> 费用结算
+                            <br>/转让完成 </li>
+                    </ul>
+                    <p>1、买家选定所需专利/技术，确认国家手续办理方，确认交易合同
+                        <br> 2、火凤凰网确认专利/技术可交易
+                        <br> 3、买家支付交易款项到火凤凰网平台
+                        <br> 4、买卖双方签订《专利转让委托书》非专利不需要签订、《转让协议》、《解聘书》各一式两份并提交给办理国家手续方
+                        <br> 5、办理国家手续方提交办理官方手续，国家专利局1个月左右下发《专利转让手续合格通知书》
+                        <br> 6、买家确认收到《专利证书》、《专利手续合同通知书》原件，非专利转让收到《技术转让协议》
+                        <br> 7、平台把交易款项支付给卖家，至此专利/技术转让合同完成 </p>
+                </div>
+                <div class="centerBox center5">
+                    <h3>过户资料</h3>
+                    <table>
+                        <caption>买方需提供资料</caption>
+                        <tbody>
+                            <tr>
+                                <td>公司</td>
+                                <td style="line-height:.46rem">1、企业营业执照
+                                    <br>2、企业组织机构代码证</td>
+                            </tr>
+                            <tr>
+                                <td>个人</td>
+                                <td>身份证</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><span>专利过户后买家会获得：</span>
+                        <br>1、专利证书
+                        <br>2、手续合格通知书
+                        <br>3、专利登记簿副本</p>
+                    <p style="margin-bottom: .3rem;"><span>技术转让后买家会获得：</span>
+                        <br>1、技术转让授权书
+                        <br>2、转让技术文档</p>
+                </div>
+                <div class="centerBox center6">
+                    <h3>安全交易保障</h3>
+                    <p>1、买家选定所需专利/技术，确认国家手续办理方，确认交易合同
+                        <br> 2、火凤凰网确认专利/技术可交易
+                        <br> 3、买家支付交易款项到火凤凰网平台
+                        <br> 4、买卖双方签订《专利转让委托书》非专利不需要签订、《转让协议》、《解聘书》各一式两份并提交给办理国家手续方
+                        <br> 5、办理国家手续方提交办理官方手续，国家专利局1个月左右下发《专利转让手续合格通知书》
+                        <br> 6、买家确认收到《专利证书》、《专利手续合同通知书》原件，非专利转让收到《技术转让协议》
+                        <br> 7、平台把交易款项支付给卖家，至此专利/技术转让合同完成 </p>
+                </div>
+                <div class="centerBox center7">
+                    <h3>竞价用户</h3>
+                    <div id="longterm_user"></div>
+                </div>
+            </div>
+        </main>
+        <div class="menu">
+            <ul>
+                <a href="../index.html">
+                    <li>首页</li>
+                </a>
+                <a href="longterm_list.html">
+                    <li>长期转让</li>
+                </a>
+                <a href="jingjia_list.html">
+                    <li>竞价转让</li>
+                </a>
+                <a href="project_list.html">
+                    <li>融资项目</li>
+                </a>
+                <a href="innovation_list.html">
+                    <li>创新协同</li>
+                </a>
+                <a href="internation_list.html">
+                    <li>国际合作</li>
+                </a>
+                <a href="important_list.html">
+                    <li>重要信息</li>
+                </a>
+                <a href="public_platform.html">
+                    <li>公共平台</li>
+                </a>
+            </ul>
+        </div>
+    </div>
+    <script src="../js/src/jquery.min.js"></script>
+    <script src="../js/src/iscroll-probe.js"></script>
+    <script src="../js/public.js"></script>
+    <script src="../js/jinjia_fixedassetDetaile.js"></script>
+</body>
+
+</html>

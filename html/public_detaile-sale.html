@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta name="format-detection" content="telephone=no" />
+    <script src="../js/src/htmlrem.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/resetapp.css">
+    <link rel="stylesheet" type="text/css" href="../css/public_list.css">
+    <title>公共平台-详情</title>
+    <style type="text/css">
+        body {
+            font-size: .24rem;
+        }
+        
+        .header p {
+            width: 100%;
+            height: 100%;
+            line-height: .88rem;
+            text-align: center;
+            font-size: .32rem;
+            color: white;
+        }
+        
+        #wrapper {
+            overflow-y: scroll;
+            padding: 0 .2rem;
+        }
+        
+        img {
+            width: 6rem;
+            display: block;
+            margin: .3rem auto .5rem;
+        }
+        
+        #title {
+            line-height: .48rem;
+            font-size: .34rem;
+            padding-top: .43rem;
+        }
+        
+        .detaile-key {
+            font-size: .24rem;
+            color: #9a9a9a;
+            padding: .2rem 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header head_sou">
+            <div class="backBtn"></div>
+            <p>公共平台详情</p>
+            <div class="menuBtn"></div>
+        </header>
+        <main class="wraps" id="wrapper">
+            <div class="wrap-row">
+                <div class="wrap-center innovation-detaile">
+                    <div class="detaile-left">
+                        <div class="detaile-title" id="title"> </div>
+                        <div class="detaile-key"> <span id="catalog" style="margin-right:.4rem"></span>发布日期：<span id="publish-time"></span> </div>
+                        <div class="detaile-list" style="display:none"> </div>
+                        <div class="detaile-article" id="content"> </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div class="menu">
+            <ul>
+                <a href="../index.html">
+                    <li>首页</li>
+                </a>
+                <a href="longterm_list.html">
+                    <li>长期转让</li>
+                </a>
+                <a href="jingjia_list.html">
+                    <li>竞价转让</li>
+                </a>
+                <a href="project_list.html">
+                    <li>融资项目</li>
+                </a>
+                <a href="innovation_list.html">
+                    <li>创新协同</li>
+                </a>
+                <a href="internation_list.html">
+                    <li>国际合作</li>
+                </a>
+                <a href="important_list.html">
+                    <li>重要信息</li>
+                </a>
+                <a href="public_platform.html">
+                    <li>公共平台</li>
+                </a>
+            </ul>
+        </div>
+    </div>
+    <script src="../js/src/jquery.min.js"></script>
+    <!--    <script src="../js/src/iscroll-probe.js"></script>-->
+    <script src="../js/public.js"></script>
+    <script coolie src="js/lib/coolie/coolie.min.js" data-config="../../conf/coolie-config.js" data-main="../../main/public_detaile-sale.js"></script>
+</body>
+
+</html>

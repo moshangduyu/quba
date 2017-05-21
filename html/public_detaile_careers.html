@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta name="format-detection" content="telephone=no" />
+    <script src="../js/src/htmlrem.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/resetapp.css">
+    <link rel="stylesheet" type="text/css" href="../css/public_list.css">
+    <title>公共平台-详情</title>
+    <style type="text/css">
+        body {
+            font-size: .24rem;
+        }
+        
+        .header p {
+            width: 100%;
+            height: 100%;
+            line-height: .88rem;
+            text-align: center;
+            font-size: .32rem;
+            color: white;
+        }
+        
+        #wrapper {
+            overflow-y: scroll;
+        }
+        
+        .wrap-center {
+            width: 100%;
+            padding: 0 .2rem;
+        }
+        
+        img {
+            width: 100%;
+        }
+        
+        .wrap-center {
+            background: white;
+            padding-bottom: .4rem;
+        }
+        
+        #title {
+            line-height: .48rem;
+            font-size: .34rem;
+            padding-top: .43rem;
+        }
+        
+        #title+p {
+            font-size: .24rem;
+            line-height: .34rem;
+            padding-top: .08rem;
+            padding-bottom: .4rem;
+        }
+        
+        .wrap-center>div {
+            color: #9a9a9a;
+        }
+        
+        .tabs-header {
+            width: 100%;
+            height: .8rem;
+            background: white;
+            display: -webkit-box;
+            font-size: .28rem;
+            margin-top: .2rem;
+        }
+        
+        .tabs-header li {
+            line-height: .8rem;
+            text-align: center;
+            height: 100%;
+            -webkit-box-flex: 1;
+        }
+        
+        .tabs-header li.active {
+            background: #f4d13f;
+            color: white;
+        }
+        
+        .tabs-content {
+            padding-top: .45rem;
+        }
+        
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header head_sou">
+            <div class="backBtn"></div>
+            <p>公共平台详情</p>
+            <div class="menuBtn"></div>
+        </header>
+        <main class="wraps" id="wrapper">
+            <div class="wrap-row title" style="margin-top: 0;">
+                <div class="wrap-center">
+                    <h2 id="title">CTO(首席技术官)</h2>
+                    <p><i id="salaryMin"></i>-<i id="salaryMax"></i> / <i id="regionFullName"></i> / 工作<i id="experienceName"></i> / <i id="degreeName"></i> / <i id="jobTypeName"></i></p>
+                    <div><span> <i class="company"></i>招聘</span><span style="padding-left:.4rem">发布日期：<i id="publishTime"></i> </span></div>
+                </div>
+                <ul class="tabs-header">
+                    <li class="active" data-for="de">职位描述</li>
+                    <li data-for="info">公司介绍</li>
+                </ul>
+            </div>
+            <div class="wrap-row careers-detaile">
+                <div class="wrap-center">
+                    <div class=" carees-detaile-left"> <pre id="jobDescription" class="tabs-content de"></pre> <pre id="companyDescription" class="tabs-content info" hidden></pre> </div>
+                    <!--
+                    <div class=" carees-detaile-right">
+                        <ul>
+                            <li><span>公司名称:</span> <span id="company"></span></li>
+                            <li><span>公司领域:</span> <span id="industryName"></span></li>
+                            <li><span>公司性质:</span> <span id="companyTypeName"></span> </li>
+                            <li><span>公司规模:</span> <span id="companyScaleName"></span></li>
+                            <li><span>公司地址:</span> <span id="companyAddress"></span></li>
+                        </ul>
+                    </div>
+--></div>
+            </div>
+        </main>
+        <div class="menu">
+            <ul>
+                <a href="../index.html">
+                    <li>首页</li>
+                </a>
+                <a href="longterm_list.html">
+                    <li>长期转让</li>
+                </a>
+                <a href="jingjia_list.html">
+                    <li>竞价转让</li>
+                </a>
+                <a href="project_list.html">
+                    <li>融资项目</li>
+                </a>
+                <a href="innovation_list.html">
+                    <li>创新协同</li>
+                </a>
+                <a href="internation_list.html">
+                    <li>国际合作</li>
+                </a>
+                <a href="important_list.html">
+                    <li>重要信息</li>
+                </a>
+                <a href="public_platform.html">
+                    <li>公共平台</li>
+                </a>
+            </ul>
+        </div>
+    </div>
+    <script src="../js/src/jquery.min.js"></script>
+    <!--    <script src="../js/src/iscroll-probe.js"></script>-->
+    <script src="../js/public.js"></script>
+    <script coolie src="js/lib/coolie/coolie.min.js" data-config="../../conf/coolie-config.js" data-main="../../main/public_detaile_careers.js"></script>
+</body>
+
+</html>

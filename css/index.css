@@ -1,0 +1,297 @@
+.logo {
+    width: 1.92rem;
+    height: .64rem;
+    position: relative;
+    top: .12rem;
+}
+
+.menuBtn {
+    position: absolute;
+    right: .3rem;
+    top: .275rem;
+    width: .4rem;
+    height: .35rem;
+}
+
+.menuBtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1rem;
+    height: .88rem;
+    background: url('../images/ic_menu.png') no-repeat center center;
+    background-size: .4rem .35rem;
+}
+
+main {
+    overflow-y: scroll;
+}
+
+
+/*banner*/
+
+#lunbo {
+    position: relative;
+    width: 100%;
+    height: 3.36rem;
+}
+
+#lunbo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#lunbo .swiper-pagination {
+    font-size: 0;
+}
+
+.swiper_icon {
+    border-radius: 0px;
+    width: .21rem;
+    height: 0.04rem;
+    background: #fff;
+    opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+    background: #fff;
+    opacity: 1;
+}
+
+.swiper-pagination {
+    text-align: left;
+    padding-left: .4rem;
+}
+
+
+/*info*/
+
+.info {
+    width: 100%;
+    height: auto;
+    background: #fff;
+    padding-bottom: .2rem;
+}
+
+.info h2 {
+    width: 100%;
+    height: .86rem;
+    line-height: .86rem;
+    font-size: .26rem;
+    text-align: center;
+}
+
+.info_ct {
+    width: 4.84rem;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.info_del {
+    width: 2.21rem;
+    height: 1.33rem;
+    margin-top: .12rem;
+    margin-bottom: .42rem;
+}
+
+.info_ct:nth-of-type(1) .l {
+    background: url('../images/pic_advantage_01.png') no-repeat;
+    background-size: 100% 100%;
+}
+
+.info_ct:nth-of-type(1) .r {
+    background: url('../images/pic_advantage_02.png') no-repeat;
+    background-size: 100% 100%;
+}
+
+.info_ct:nth-of-type(2) .l {
+    background: url('../images/pic_advantage_03.png') no-repeat;
+    background-size: 100% 100%;
+}
+
+.info_ct:nth-of-type(2) .r {
+    background: url('../images/pic_advantage_04.png') no-repeat;
+    background-size: 100% 100%;
+}
+
+.info_ct .l {
+    float: left;
+}
+
+.info_ct .r {
+    float: right;
+}
+
+.info_del p {
+    margin-top: .6rem;
+    font-size: .16rem;
+    color: #000;
+    width: 100%;
+    height: .55rem;
+    line-height: .55rem;
+    text-align: center;
+    background: url(../images/under_line.jpg) no-repeat center bottom;
+    background-size: .42rem .06rem;
+}
+
+
+/*project*/
+
+
+/*
+jjz
+
+.bts .jj_title {
+    width: 100%;
+    height: 1rem;
+    margin-top: .2rem;
+    overflow: hidden;
+    color: #272727;
+    font-size: 0;
+}
+
+.jj_title_l {
+    margin: .05rem .2rem 0 .2rem;
+    float: left;
+    font
+}
+
+.jj_title_l img {
+    width: .7rem;
+    height: .7rem;
+    border-radius: 50%;
+}
+
+.jj_title_r {
+    width: 5rem;
+    float: left;
+}
+
+.jj_title_r h3 {
+    width: 100%;
+    font-size: .27rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.jj_title_r>p {
+    font-size: .18rem;
+    width: 100%;
+    overflow: hidden;
+    color: #9a9a9a;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.jj_title_r h3 span {
+    font-size: .24rem;
+    padding-left: .2rem;
+}
+
+.jj_title_pre>p {
+    line-height: .36rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.jj_title_pre>p span {
+    color: #666666;
+    padding-left: .1rem;
+}
+*/
+
+
+/*partner*/
+
+.partner h1 {
+    font-size: .26rem;
+    padding: .44rem .2rem;
+}
+
+.swiper-container2 {
+    width: 100%;
+    margin-bottom: .5rem;
+}
+
+.swiper-container2 p {
+    width: 1.73rem;
+    height: .82rem;
+    float: left;
+    background: #fff;
+    margin: 0 .05rem .2rem;
+    position: relative;
+    overflow: hidden;
+    font-size: 0;
+}
+
+.swiper-container2 p img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-container2 {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.inlogo {
+    width: 5.5rem;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.partner .swiper-container2 .swiper-button-prev {
+    background: url(../images/ic_arrow_left.png);
+    width: .24rem;
+    height: .45rem;
+    background-size: 100% 100%;
+}
+
+.partner .swiper-container2 .swiper-button-next {
+    background: url(../images/ic_arrow_right.png);
+    width: .24rem;
+    height: .45rem;
+    background-size: 100% 100%;
+}
+
+
+/*footer*/
+
+.footer {
+    width: 100%;
+    background: #2C2C2C;
+}
+
+.footer p {
+    text-align: center;
+    color: #CCCCCC;
+}
+
+.abut_us {
+    padding-top: .38rem;
+    font-size: .24rem;
+}
+
+.footer_btm {
+    color: #606672;
+    font-size: .2rem;
+    padding-top: .2rem;
+    line-height: .35rem;
+    padding-bottom: .2rem;
+}
+
+.abut_us a {
+    font-size: .24rem;
+    color: #CCCCCC;
+}

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta name="format-detection" content="telephone=no" />
+    <script src="../js/src/htmlrem.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/resetapp.css">
+    <link rel="stylesheet" type="text/css" href="../css/public_list.css">
+    <title>融资项目-详情</title>
+    <style type="text/css">
+        .header p {
+            width: 100%;
+            height: 100%;
+            line-height: .88rem;
+            text-align: center;
+            font-size: .32rem;
+            color: white;
+        }
+        /*wrapper*/
+        
+        #wrapper {
+            overflow-y: scroll;
+            font-size: .24rem
+        }
+        
+        .banner {
+            width: 100%;
+            height: 4.1rem;
+        }
+        
+        .banner img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .centerBox {
+            width: 100%;
+            background: white;
+            margin-bottom: .2rem;
+            overflow: hidden;
+        }
+        
+        .centerBox h3 {
+            width: 100%;
+            height: .8rem;
+            font-size: .28rem;
+            line-height: .8rem;
+            border-bottom: .02rem solid #eee;
+            text-indent: .2rem;
+        }
+        /*center1*/
+        
+        .center1 .title {
+            margin-top: .3rem;
+            font-size: .34rem;
+            line-height: .5rem;
+            padding: 0 .2rem;
+        }
+        
+        .center1>div {
+            margin: .2rem 0 .35rem;
+        }
+        
+        .center1>div p {
+            font-size: .24rem;
+            color: #9a9a9a;
+            line-height: .5rem;
+            padding: 0 .2rem;
+        }
+        
+        .center1>div p b {
+            color: #666;
+        }
+        
+        .center1>div p span {
+            display: inline-block;
+            width: 50%;
+        }
+        
+        .center1>div p i {
+            color: #2684a6;
+        }
+        /*nav*/
+        
+        nav {
+            width: 100%;
+            height: .8rem;
+            background: white;
+            font-size: .28rem;
+            color: #272727;
+            display: -webkit-box;
+            margin-bottom: .2rem;
+            border: 0;
+        }
+        
+        nav div {
+            text-align: center;
+            line-height: .8rem;
+            -webkit-box-flex: 1;
+        }
+        
+        nav div.selectNav {
+            background: #f4d13f;
+            color: white;
+        }
+        /*center2*/
+        
+        .center2 .content {
+            margin: .38rem 0;
+            font-size: .24rem;
+            color: #666;
+            line-height: .48rem;
+            padding: 0 .2rem;
+        }
+        /*center3*/
+        
+        .center3>div {
+            margin: .45rem 0;
+        }
+        
+        .center3>div img {
+            margin: .05rem auto;
+            display: block;
+            width: 6rem;
+        }
+        
+        .noApprove {
+            background: white;
+            padding: .4rem .2rem;
+            line-height: .48rem;
+        }
+        /*section*/
+        
+        .noApprove {
+            display: none;
+        }
+        /*center4*/
+        
+        .center4>div {
+            padding: 0 .2rem 0 .54rem;
+            line-height: .48rem;
+            color: #666;
+            margin-bottom: .3rem;
+        }
+        
+        .center4 h4 {
+            margin-top: .35rem;
+            height: .55rem;
+            line-height: .55rem;
+            color: #00799f;
+            position: relative;
+        }
+        
+        .center4 h4:before {
+            display: block;
+            content: "";
+            position: absolute;
+            top: .205rem;
+            left: -.32rem;
+            width: .14rem;
+            height: .14rem;
+            background: #f4d13f;
+            border-radius: 100%;
+        }
+        
+        .center4 h4 span {
+            display: inline-block;
+            width: 1.5rem;
+            color: #272727;
+        }
+        /*center5*/
+        
+        .center5>div {
+            margin: .5rem auto;
+        }
+        
+        .center5>div li {
+            height: .75rem;
+            padding-left: .2rem;
+            font-size: .2rem;
+        }
+        
+        .center5>div li span {
+            display: inline-block;
+            color: #666;
+            width: 1.5rem;
+            position: relative;
+        }
+        
+        .center5>div li span:before {
+            display: block;
+            content: "";
+            position: absolute;
+            top: .05rem;
+            right: .2rem;
+            width: .14rem;
+            height: .14rem;
+            background: #f4d13f;
+            border-radius: 100%;
+            z-index: 999;
+        }
+        
+        .center5>div li span:after {
+            display: block;
+            content: "";
+            position: absolute;
+            top: .19rem;
+            right: .27rem;
+            width: .01rem;
+            height: .6rem;
+            background: #eee;
+            z-index: 100;
+        }
+        
+        .center5>div li:last-child span:after {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header head_sou">
+            <div class="backBtn"></div>
+            <p>融资项目详情</p>
+            <div class="menuBtn"></div>
+        </header>
+        <main id="wrapper">
+            <div class="iscroll">
+                <div class="ajaxCenter">
+                    <div class="banner"><img src="" alt=""></div>
+                    <div class="centerBox center1">
+                        <h1 class="title">此处标题</h1>
+                        <div>
+                            <p>行业领域：<b></b></p>
+                            <p>行业领域：<b></b></p>
+                            <p>行业领域：<b></b></p>
+                            <p>行业领域：<b></b></p>
+                            <p>行业领域：<b></b></p>
+                        </div>
+                    </div>
+                </div>
+                <nav>
+                    <div class="selectNav">项目概况</div>
+                    <div>商业方案</div>
+                    <div>融资详情</div>
+                </nav>
+                <div class="nav_content">
+                    <section class="approve">
+                        <!--
+                        <div class="centerBox center2">
+                            <h3>项目概况</h3>
+                            <div class="content">此处内容</div>
+                        </div>
+                        <div class="centerBox center3">
+                            <h3>图片资料</h3>
+                            <div class="img"> <img src="" alt=""><img src="" alt=""> </div>
+                        </div>
+                        <div class="centerBox center3">
+                            <h3>图片资料</h3>
+                            <div class="img"> <img src="" alt=""><img src="" alt=""> </div>
+                        </div>
+                        <div class="centerBox center5">
+                            <h3>图片资料</h3>
+                            <div class="img">
+                                <ul>
+                                    <li><span>2019.01.13</span>好的文化单位还耽误时间偶的</li>
+                                    <li><span>2019.01.13</span>好的文化单位还耽误时间偶的</li>
+                                    <li><span>2019.01.13</span>好的文化单位还耽误时间偶的</li>
+                                    <li><span>2019.01.13</span>好的文化单位还耽误时间偶的</li>
+                                </ul>
+                            </div>
+                        </div>
+-->
+                    </section>
+                    <section class="noApprove">只有认证未投资人的用户才能查看项目相关信息，请至官网完成投资人认证</section>
+                    <section class="noApprove">只有认证未投资人的用户才能查看项目相关信息，请至官网完成投资人认证</section>
+                </div>
+            </div>
+        </main>
+        <div class="menu">
+            <ul>
+                <a href="../index.html">
+                    <li>首页</li>
+                </a>
+                <a href="longterm_list.html">
+                    <li>长期转让</li>
+                </a>
+                <a href="jingjia_list.html">
+                    <li>竞价转让</li>
+                </a>
+                <a href="project_list.html">
+                    <li>融资项目</li>
+                </a>
+                <a href="innovation_list.html">
+                    <li>创新协同</li>
+                </a>
+                <a href="internation_list.html">
+                    <li>国际合作</li>
+                </a>
+                <a href="important_list.html">
+                    <li>重要信息</li>
+                </a>
+                <a href="public_platform.html">
+                    <li>公共平台</li>
+                </a>
+            </ul>
+        </div>
+    </div>
+    <script src="../js/src/jquery.min.js"></script>
+    <script src="../js/src/iscroll-probe.js"></script>
+    <script src="../js/public.js"></script>
+    <script src="../js/project_detaile.js"></script>
+</body>
+
+</html>

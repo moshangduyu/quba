@@ -1,0 +1,290 @@
+@charset "utf-8";
+body,
+ul,
+ol,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+td,
+th,
+input,
+select,
+textarea,
+form {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+img {
+    border: none;
+}
+
+input,
+select,
+textarea,
+button,
+a {
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+textarea {
+    resize: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 1em;
+    font-weight: 400;
+}
+
+em {
+    font-style: normal;
+}
+
+
+/*浮动*/
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.clearfix:after,
+.clearfix:before {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+
+/*盒子内边框自适应*/
+
+*,
+*::after,
+*::before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: "微软雅黑";
+}
+
+
+/*取消input,button,select默认样式*/
+
+input,
+button,
+select {
+    -webkit-appearance: none;
+}
+
+a {
+    color: #000;
+}
+
+b {
+    font-weight: 400;
+}
+
+i {
+    font-style: normal;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    /*取消移动端点击瞬间背景*/
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    color: #272727;
+}
+
+.container {
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+    height: 100%;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    background: #F5F5F5;
+    position: relative;
+}
+
+.header {
+    width: 100%;
+    height: .88rem;
+    line-height: .88rem;
+    text-align: center;
+    background: #090909;
+    position: relative;
+}
+
+main {
+    -webkit-box-flex: 1;
+}
+
+
+/*menu*/
+
+.menu,
+.option_menu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .3);
+    z-index: 10000;
+}
+
+.menu ul {
+    width: 4rem;
+    height: 100%;
+    background: white;
+    position: absolute;
+    top: 0;
+    right: -100%;
+    padding: .3rem 0;
+    overflow-y: scroll;
+}
+
+.menu ul a {
+    font-size: .3rem;
+    display: block;
+    color: #272727;
+}
+
+.menu ul a li {
+    width: 100%;
+    height: 1.1rem;
+    line-height: 1.1rem;
+    padding-left: 1.1rem;
+}
+
+.menu a:nth-of-type(1) li {
+    background: url('../images/ic_menu_home.png') no-repeat .5rem center;
+    background-size: .34rem .31rem;
+}
+
+.menu a:nth-of-type(2) li {
+    background: url('../images/ic_menu_chang_qi_zhuan_rang.png') no-repeat .5rem center;
+    background-size: .31rem .37rem;
+}
+
+.menu a:nth-of-type(3) li {
+    background: url('../images/ic_menu_jing_jia_zhuan_rang.png') no-repeat .5rem center;
+    background-size: .35rem .35rem;
+}
+
+.menu a:nth-of-type(4) li {
+    background: url('../images/ic_menu_rong_zi_xiang_mu.png') no-repeat .5rem center;
+    background-size: .3rem .3rem;
+}
+
+.menu a:nth-of-type(5) li {
+    background: url('../images/ic_menu_xie_tong_chuang_xin.png') no-repeat .5rem center;
+    background-size: .35rem .39rem;
+}
+
+.menu a:nth-of-type(6) li {
+    background: url('../images/ic_menu_guo_ji_he_zuo.png') no-repeat .5rem center;
+    background-size: .34rem .34rem;
+}
+
+.menu a:nth-of-type(7) li {
+    background: url('../images/ic_menu_zhong_yao_xin_xi.png') no-repeat .5rem center;
+    background-size: .32rem .32rem;
+}
+
+.menu a:nth-of-type(8) li {
+    background: url('../images/ic_menu_gong_gong_ping_tai.png') no-repeat .5rem center;
+    background-size: .35rem .31rem;
+}
+
+
+/*点击向上按钮*/
+
+.backTop {
+    position: fixed;
+    right: 0.2rem;
+    bottom: 1rem;
+    z-index: 20;
+    display: none;
+}
+
+.backTop div {
+    width: .7rem;
+    height: .7rem;
+    font-size: .24rem;
+    border-radius: 50%;
+    margin-top: 0.2rem;
+}
+
+.backTop div:nth-of-type(1) {
+    background: url('../images/backtop1.png') no-repeat;
+    background-size: 100% 100%;
+}
+
+.backTop div:nth-of-type(2) {
+    background: url('../images/backtop2.png') no-repeat;
+    background-size: 100% 100%;
+    color: #fff;
+    line-height: .7rem;
+    text-align: center;
+}
+
+
+/*上下拉*/
+
+.scroller-pullDown,
+.scroller-pullUp {
+    width: 100%;
+    text-align: center;
+    font-size: .26rem;
+    line-height: 40px;
+    height: 40px;
+}
+
+#PullUp img {
+    width: .3rem;
+    height: .3rem;
+}
