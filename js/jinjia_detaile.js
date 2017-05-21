@@ -87,7 +87,7 @@
                     //详细描述
                     DetaileCard += '<div class="centerBox center2"><h3>详细描述</h3>';
                     if (res.data.description == undefined) {
-                        DetaileCard += '<div class="content">暂无介绍</div></div>';
+                        DetaileCard += '<div class="content" style="padding-left:.2rem;color:#666;">暂无介绍</div></div>';
                     }
                     else {
                         DetaileCard += '<div class="content">' + res.data.description + '</div></div>';
@@ -95,7 +95,7 @@
                     // 图片资料
                     DetaileCard += '<div class="centerBox center3"><h3>图片资料</h3>';
                     if (res.data.pictures.length == 0) {
-                        DetaileCard += '<div class="img">暂无介绍</div>';
+                        DetaileCard += '<div class="img" style="padding-left:.2rem;color:#666;">暂无介绍</div>';
                     }
                     else {
                         DetaileCard += '<div class="img">';

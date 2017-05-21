@@ -71,7 +71,7 @@
                     // 图片资料
                     projectDec += '<div class="centerBox center3"><h3>图片资料</h3>';
                     if (res.data.pictures.length == 0) {
-                        projectDec += '<div class="img">暂无介绍</div>';
+                        projectDec += '<div class="img"  style="padding-left:.2rem;color:#666;">暂无介绍</div>';
                     }
                     else {
                         projectDec += '<div class="img">';
@@ -83,19 +83,18 @@
                     // 创始团队
                     projectDec += '<div id="project_team" class="centerBox center4"><h3> 创始团队 </h3>';
                     if (res.data.teams.length == 0) {
-                        projectDec += '<div>暂无介绍</div></div>';
+                        projectDec += '<div  style="padding-left:.2rem;color:#666;">暂无介绍</div></div>';
                     }
                     else {
                         projectDec += '<div>';
                         $.each(res.data.teams, function (index, item) {
-                            projectDec += '<h4><span>' + item.roleName + '</span>' + item.name + '丨' + item.title + '</h4><p>' + item.brief + '</p>\
-                              </div></div>';
+                            projectDec += '<h4><span>' + item.roleName + '</span>' + item.name + '丨' + item.title + '</h4><p>' + item.brief + '</p>';
                         })
                     }
                     // 发展动态
-                    projectDec += '<div id="project_action" class="centerBox center5"><h3>发展动态</h3>';
+                    projectDec += '</div></div><div id="project_action" class="centerBox center5"><h3>发展动态</h3>';
                     if (res.data.events.length == 0) {
-                        projectDec += '<div>暂无介绍</div></div>';
+                        projectDec += '<div  style="padding-left:.2rem;color:#666;">暂无介绍</div></div>';
                     }
                     else {
                         projectDec += '<div><ul>';

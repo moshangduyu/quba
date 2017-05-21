@@ -178,16 +178,32 @@
         }
         
         .center5>div li {
+            display: block;
             height: .75rem;
             padding-left: .2rem;
-            font-size: .2rem;
+            font-size: 0;
         }
         
         .center5>div li span {
-            display: inline-block;
+            display: block;
+            float: left;
             color: #666;
             width: 1.5rem;
+            height: 100%;
             position: relative;
+            font-size: .2rem;
+        }
+        
+        .center5>div li b {
+            font-size: .2rem;
+            display: block;
+            float: left;
+            width: 4.5rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
         }
         
         .center5>div li span:before {
@@ -249,33 +265,7 @@
                     <div>融资详情</div>
                 </nav>
                 <div class="nav_content">
-                    <section class="approve">
-                        <!--
-                        <div class="centerBox center2">
-                            <h3>项目概况</h3>
-                            <div class="content">此处内容</div>
-                        </div>
-                        <div class="centerBox center3">
-                            <h3>图片资料</h3>
-                            <div class="img"> <img src="" alt=""><img src="" alt=""> </div>
-                        </div>
-                        <div class="centerBox center3">
-                            <h3>图片资料</h3>
-                            <div class="img"> <img src="" alt=""><img src="" alt=""> </div>
-                        </div>
-                        <div class="centerBox center5">
-                            <h3>图片资料</h3>
-                            <div class="img">
-                                <ul>
-                                    <li><span>2019.01.13</span>好的文化单位还耽误时间偶的</li>
-                                    <li><span>2019.01.13</span>好的文化单位还耽误时间偶的</li>
-                                    <li><span>2019.01.13</span>好的文化单位还耽误时间偶的</li>
-                                    <li><span>2019.01.13</span>好的文化单位还耽误时间偶的</li>
-                                </ul>
-                            </div>
-                        </div>
--->
-                    </section>
+                    <section class="approve"> </section>
                     <section class="noApprove">只有认证未投资人的用户才能查看项目相关信息，请至官网完成投资人认证</section>
                     <section class="noApprove">只有认证未投资人的用户才能查看项目相关信息，请至官网完成投资人认证</section>
                 </div>
