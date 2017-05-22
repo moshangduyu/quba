@@ -10,7 +10,7 @@
         var title = ""
             , currentPage = 1
             , loading = 'false'
-            , catalog = ""
+            , catalog = "project.biding"
             , period = "";
         /*获取选项列表*/
         optionList();
@@ -34,14 +34,10 @@
                     $('.innovation-type-1>ul').html(html);
                     /*筛选点击按钮*/
                     var $li = $('.innovation-type-1>ul').find('li');
+                    $li.eq(0).addClass('onSelect');
                     $li.click(function () {
-                        $(this).toggleClass('onSelect').siblings('li').removeClass('onSelect');
-                        if ($(this).hasClass('onSelect')) {
-                            catalog = $(this).data('code');
-                        }
-                        else {
-                            catalog = '';
-                        }
+                        $(this).addClass('onSelect').siblings('li').removeClass('onSelect');
+                        catalog = $(this).data('code');
                         currentPage = 1;
                         loading = 'false'
                         indexAjax();
@@ -80,7 +76,8 @@
                 $.each($('.option-main li'), function () {
                     $(this).removeClass('onSelect');
                 })
-                catalog = "";
+                var $li = $('.innovation-type-1>ul').find('li').eq(0).addClass('onSelect');
+                catalog = "project.biding";
                 period = ""
                 currentPage = 1;
                 loading = 'false'

@@ -62,7 +62,7 @@
                                 html += '<span>' + item.techTypeName + '</span>' + '<span>' + item.industryName + '</span>' + '<span>' + item.maturityName + '</span>';
                             }
                             else {
-                                html += '<span>' + item.industryName + '</span>' + '<span>' + item.maturityName + '</span>'
+                                html += '<span>' + item.techTypeName + '</span>' + '<span>' + item.industryName + '</span>' + '<span>' + item.maturityName + '</span>'
                             }
                             html += '</p>' + '<div class="pre">';
                             $.each(item.prices, function (index, el) {
@@ -112,7 +112,7 @@
                 , data: {
                     title: title
                     , currentPage: currentPage
-                    , pageSize: 1
+                    , pageSize: 10
                 }
                 , jsonp: "jsoncallback"
                 , success: function (res) {
@@ -134,28 +134,27 @@
                                 html += '<span>' + item.techTypeName + '</span>' + '<span>' + item.industryName + '</span>' + '<span>' + item.maturityName + '</span>';
                             }
                             else {
-                                html += '<span>' + item.industryName + '</span>' + '<span>' + item.maturityName + '</span>'
+                                html += '<span>' + item.techTypeName + '</span>' + '<span>' + item.industryName + '</span>' + '<span>' + item.maturityName + '</span>'
                             }
                             html += '</p>' + '<div class="pre">';
-                            $.each(item.prices, function (index, el) {
-                                if (item.prices.length == 1) {
-                                    html += '<p style="height:.2rem"></p>';
-                                    if (el.isMarkedPrice == false) {
-                                        html += '<p>' + el.tradingModeName + '：<span>面议</span></p>';
-                                    }
-                                    else {
-                                        html += '<p>' + el.tradingModeName + '：<span>￥' + el.price + '万</span></p>';
-                                    }
+                            if (item.currency == "CNY") {
+                                html += '<p>转让底价：<span>￥' + (item.startPrice / 10000) + '万</span></p>';
+                                if (item.bidRange >= 10000) {
+                                    html += '<p>加价幅度：<span>￥' + (item.bidRange / 10000) + '万</span></p>';
                                 }
                                 else {
-                                    if (el.isMarkedPrice == false) {
-                                        html += '<p>' + el.tradingModeName + '：<span>面议</span></p>';
-                                    }
-                                    else {
-                                        html += '<p>' + el.tradingModeName + '：<span>￥' + el.price + '万</span></p>';
-                                    }
+                                    html += '<p>加价幅度：<span>￥' + item.bidRange + '元</span></p>';
                                 }
-                            })
+                            }
+                            else {
+                                html += '<p>转让底价：<span>$' + (item.startPrice / 10000) + '万</span></p>';
+                                if (item.bidRange >= 10000) {
+                                    html += '<p>加价幅度：<span>$' + (item.bidRange / 10000) + '万</span></p>';
+                                }
+                                else {
+                                    html += '<p>加价幅度：<span>$' + item.bidRange + '元</span></p>';
+                                }
+                            }
                             html += '</div>' + '</dd>' + '</dl>' + '</a>' + '</div>';
                         });
                         if (loading == 'true') {

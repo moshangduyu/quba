@@ -147,6 +147,7 @@
                 }
             })
         }
+        backTop(myScroll);
         myScroll.on('scroll', function () {
             myScroll.refresh();
         })

@@ -99,11 +99,31 @@
                 </a>
             </ul>
         </div>
+        <div class="backTop">
+            <div></div>
+            <div>反馈</div>
+        </div>
     </div>
     <script src="../js/src/jquery.min.js"></script>
-    <!--    <script src="../js/src/iscroll-probe.js"></script>-->
     <script src="../js/public.js"></script>
     <script coolie src="js/lib/coolie/coolie.min.js" data-config="../../conf/coolie-config.js" data-main="../../main/important_detaile.js"></script>
+    <script>
+        //返回顶部按钮
+        $(window).scroll(function () {
+            console.log($(this).scrollTop())
+            if ($(this).scrollTop() == 0) {
+                $(".backTop").hide();
+            }
+            else {
+                $(".backTop").show();
+            }
+        });
+        $(".backTop").click(function () {
+            $("html,body").animate({
+                scrollTop: 0
+            }, 500);
+        })
+    </script>
 </body>
 
 </html>

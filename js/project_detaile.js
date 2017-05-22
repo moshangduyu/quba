@@ -120,7 +120,8 @@
             $(this).addClass('selectNav').siblings('div').removeClass('selectNav');
             $('.nav_content>section').eq(idx).show().siblings('section').hide();
             myScroll.refresh();
-        })
+        });
+        backTop(myScroll);
         myScroll.on('scroll', function () {
             myScroll.refresh();
         })

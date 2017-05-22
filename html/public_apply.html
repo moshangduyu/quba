@@ -55,15 +55,15 @@
             width: 100%;
             height: .88rem;
             font-size: .3rem;
-            background: #f4d13f;
+            background: #f9e8a0;
             color: #272727;
-            opacity: .5;
+            /*            opacity: .5;*/
             text-align: center;
             line-height: .88rem;
         }
         
         .apply_bottom.onSure {
-            opacity: 1;
+            background: #f4d13f;
         }
     </style>
 </head>
@@ -140,13 +140,24 @@
             }
             //提交按钮
             $('.apply_bottom').click(function () {
-                if ($(this).hasClass('onSure')) {
-                    $.popupCover({
-                        "content": "提交成功"
-                        , "callback": function () {
-                            javascript: history.back(-1);
-                        }
-                    })
+                    if ($(this).hasClass('onSure')) {
+                        $.popupCover({
+                            "content": "提交成功"
+                            , "callback": function () {
+                                javascript: history.back(-1);
+                            }
+                        })
+                    }
+                })
+                /*解决安卓手机键盘弹出屏幕向上*/
+            var H = $(window).height();
+            $(window).resize(function () {
+                var h = $(window).height();
+                if (h < H) {
+                    $(".apply_bottom").hide();
+                }
+                else {
+                    $(".apply_bottom").show();
                 }
             })
         })(jQuery);

@@ -62,7 +62,12 @@
                                 html += '<p>转让价格：<span>面议</span></p>';
                             }
                             else {
-                                html += '<p>转让价格：<span>￥' + (item.price / 10000) + '万</span></p>';
+                                if (item.currency == 'CNY') {
+                                    html += '<p>转让价格：<span>￥' + (item.price / 10000) + '万</span></p>';
+                                }
+                                else {
+                                    html += '<p>转让价格：<span>$' + (item.price / 10000) + '万</span></p>';
+                                }
                             }
                             html += '</div>' + '</dd>' + '</dl>' + '</a>' + '</div>';
                         });
@@ -109,13 +114,34 @@
                                 html += '<img class="dt_bg" src="' + item.cover + '?imageMogr2/thumbnail/!298x224r/gravity/Center/crop/298x224" alt="">';
                             }
                             html += '</dt>' + '<dd>' + '<p><span>' + item.typeName + '</span>' + '<span>' + item.regionFullName + '</span></p>' + '<div class="pre">';
-                            html += '<p style="height:.2rem"></p>';
-                            if (item.isMarkedPrice == false) {
-                                html += '<p>转让价格：<span>面议</span></p>';
+                            // 转让底价
+                            var startPriceNum = item.startPrice;
+                            if (startPriceNum >= 100000000) {
+                                var startPrice = (startPriceNum / 100000000) + '亿';
                             }
                             else {
-                                html += '<p>转让价格：<span>￥' + (item.price / 10000) + '万</span></p>';
+                                if (startPriceNum >= 10000) {
+                                    var startPrice = (startPriceNum / 10000) + '万';
+                                }
+                                else {
+                                    var startPrice = startPriceNum.toFixed(0).replace(/(\d)(?=(\d{3})+$)/g, '$1,') + '元';
+                                }
                             }
+                            // 加价幅度
+                            var bidRangeNum = item.bidRange;
+                            if (bidRangeNum > 100000000) {
+                                var bidRang = (bidRangeNum / 100000000) + '亿';
+                            }
+                            else {
+                                if (bidRangeNum >= 10000) {
+                                    var bidRang = (bidRangeNum / 10000) + '万';
+                                }
+                                else {
+                                    var bidRang = bidRangeNum.toFixed(0).replace(/(\d)(?=(\d{3})+$)/g, '$1,') + '元';
+                                }
+                            }
+                            html += '<p>转让底价：<span>' + startPrice + '</span></p>\
+											 <p>转让底价：<span>' + bidRang + '</span></p>';
                             html += '</div>' + '</dd>' + '</dl>' + '</a>' + '</div>';
                         });
                         if (loading == 'true') {
