@@ -12,12 +12,32 @@
     <link rel="stylesheet" type="text/css" href="css/public_list.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <title>首页</title>
+    <script type="text/javascript">
+        function browserRedirect() {
+            var sUserAgent = navigator.userAgent.toLowerCase();
+            var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+            var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+            var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+            var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+            var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+            var bIsAndroid = sUserAgent.match(/android/i) == "android";
+            var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+            var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+            if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+                //                window.location.href = 'http://www.hiifeng.com/h5';
+            }
+            else {
+                window.location.href = 'http://sit.quba360.com/';
+            }
+        }
+        browserRedirect();
+    </script>
 </head>
 
-<body>
+<body onresize="browserRedirect()">
     <div class="container">
         <!-- header -->
-        <header class="header" style="font-size:0;"> <img src="images/title_icon.jpg" class="logo">
+        <header class="header" style="font-size:0;"> <img src="images/logo.png" class="logo">
             <div class="menuBtn"></div>
         </header>
         <main id="wrapper">
@@ -55,7 +75,7 @@
                 <!-- project -->
                 <div class="project">
                     <div class="bts">
-                        <h1>竞价转让推荐<a href="javascript:;"><img src="images/ic_more.png"/></a></h1>
+                        <h1>竞价转让推荐<a href="html/jingjia_list.html"><img src="images/ic_more.png"/></a></h1>
                         <div id="jjzr">
                             <!--
                             <div class="bts_del">
@@ -75,7 +95,7 @@
 --></div>
                     </div>
                     <div class="bts jjz">
-                        <h1>融资项目推荐<a href="javascript:;"><img src="images/ic_more.png"/></a></h1>
+                        <h1>融资项目推荐<a href="html/project_list.html"><img src="images/ic_more.png"/></a></h1>
                         <div id="rzxm"> </div>
                     </div>
                 </div>
@@ -129,13 +149,13 @@
                 </div>
                 <!-- footer -->
                 <div class="footer">
-                    <p class="abut_us"><a href="##">联系我们</a>丨<a href="##">关于科学城</a>丨<a href="##">服务条款</a>丨<a href="##">电脑版</a></p>
-                    <p class="footer_btm">湘ICP备15014583号隐私条款</p>
+                    <p class="abut_us"><a href="html/aboutUs.html">关于我们</a>丨<a href="html/service.html">服务条款</a>丨<a href="html/privacy.html">隐私条款</a></p>
+                    <p class="footer_btm">湘ICP备3630779</p>
                 </div>
             </div>
         </main>
         <div class="backTop">
-           <div></div>
+            <div></div>
             <div>反馈</div>
         </div>
         <div class="menu">

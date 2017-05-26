@@ -32,6 +32,8 @@
         img {
             width: 100%;
             max-width: 100%;
+            display: block;
+            margin: 0 auto;
         }
         
         #title {
@@ -59,16 +61,15 @@
             <p>重要信息详情</p>
             <div class="menuBtn"></div>
         </header>
-        <main class="wraps" id="wrapper">
-            <div class="wrap-row">
-                <div class="wrap-center innovation-detaile">
-                    <div class="detaile-left">
-                        <div class="detaile-title" id="title"> </div>
-                        <div class="detaile-key"> <span id="catalog"></span><span id="publish-time"></span> </div>
-                        <div class="detaile-list" style="display:none"> </div>
-                        <div class="detaile-article" id="content"> </div>
-                    </div>
+        <main id="wrapper">
+            <div class="iscroll">
+                <!--                <div class="wrap-center innovation-detaile">-->
+                <div class="detaile-left">
+                    <div class="detaile-title" id="title"> </div>
+                    <div class="detaile-key"> <span id="catalog"></span><span id="publish-time"></span> </div>
+                    <div class="detaile-article" id="content"> </div>
                 </div>
+                <!--                </div>-->
             </div>
         </main>
         <div class="menu">
@@ -105,25 +106,12 @@
         </div>
     </div>
     <script src="../js/src/jquery.min.js"></script>
+    <script src="../js/src/iscroll-probe.js"></script>
     <script src="../js/public.js"></script>
-    <script coolie src="js/lib/coolie/coolie.min.js" data-config="../../conf/coolie-config.js" data-main="../../main/important_detaile.js"></script>
-    <script>
-        //返回顶部按钮
-        $(window).scroll(function () {
-            console.log($(this).scrollTop())
-            if ($(this).scrollTop() == 0) {
-                $(".backTop").hide();
-            }
-            else {
-                $(".backTop").show();
-            }
-        });
-        $(".backTop").click(function () {
-            $("html,body").animate({
-                scrollTop: 0
-            }, 500);
-        })
-    </script>
+    <script src="../js/important_detaile.js"></script>
+    <!--    <script coolie src="js/lib/coolie/coolie.min.js" data-config="../../conf/coolie-config.js" data-main="../../main/important_detaile.js"></script>-->
+    <!--
+   
 </body>
 
 </html>

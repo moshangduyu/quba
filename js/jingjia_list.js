@@ -64,7 +64,7 @@
                         }
                         else {
                             $.each(item.childs, function (index, el) {
-                                noParentList += '<li data-key="' + item.code + '">' + item.name + '</li>';
+                                noParentList += '<li data-key="' + el.code + '">' + el.name + '</li>';
                             });
                         }
                     })
@@ -158,6 +158,7 @@
                     });
                 }
             });
+            optionSize($('.option-main li'));
             /*重置按钮*/
             $('.reset').click(function () {
                 $.each($('.option-main li'), function () {

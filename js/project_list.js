@@ -104,6 +104,7 @@
                     });
                 }
             });
+            optionSize($('.option-main li'));
             /*重置按钮*/
             $('.reset').click(function () {
                 $.each($('.option-main li'), function () {
@@ -150,7 +151,7 @@
                     var html = "";
                     $('.screenNum').text(res.data.total);
                     $.each(res.data.rows, function (i, item) {
-                        html += '<div class="bts_del jj_del" data-id=' + item.id + '><a href="project_detaile.html?project=' + item.id + '">' + '<div class="jj_title">' + '<div class="jj_title_l"><img src=' + item.logo + '/></div>' + '<div class="jj_title_r">' + '<h3>' + item.title + '<span>' + item.brief + '</span></h3>';
+                        html += '<div class="bts_del jj_del" data-id=' + item.id + '><a href="project_detaile.html?project=' + item.id + '">' + '<div class="jj_title">' + '<div class="jj_title_l"><img src=' + item.logo + '/></div>' + '<div class="jj_title_r">' + '<h3>' + item.title + '</h3>';
                         if (item.amount != undefined) {
                             html += '<p>融资' + item.amount + '万' + ' ' + txt[item.status] + '</p>';
                         }

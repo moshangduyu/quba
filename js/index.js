@@ -24,7 +24,7 @@
                             var code = item.tech.techTypePath.split(',');
                             html += ' <div class="bts_del">' + '<a href="html/jinjia_detaile.html?tech=' + item.tech.id + '">' + '<h2>' + item.tech.title + '</h2>' + '<dl> <dt><img class="zl" src="images/ic_zhuan_li.png"/>';
                             if (item.tech.cover == undefined) {
-                                html += '<img class="dt_bg" src="/images/default-cover.png" alt="">';
+                                html += '<img class="dt_bg" src="images/list_fixedasset.png" alt="">';
                             }
                             else {
                                 html += '<img class="dt_bg" src="' + item.tech.cover + '?imageMogr2/thumbnail/!298x224r/gravity/Center/crop/298x224" alt="">';
@@ -60,7 +60,7 @@
                         else {
                             html += ' <div class="bts_del">' + '<a href="html/jinjia_fixedassetDetaile.html?fixedasset=' + item.fixedasset.id + '">' + '<h2>' + item.fixedasset.title + '</h2>' + '<dl> <dt><img class="zl" src="images/ic_zhuan_li.png"/>';
                             if (item.fixedasset.cover == undefined) {
-                                html += '<img class="dt_bg" src="images/default-cover.png" alt="">';
+                                html += '<img class="dt_bg" src="images/list_fixedasset.png" alt="">';
                             }
                             else {
                                 html += '<img class="dt_bg" src="' + item.fixedasset.cover + '" alt="">';
@@ -109,7 +109,7 @@
                 , success: function (res) {
                     var html = ""
                     $.each(res.data.rows, function (i, item) {
-                        html += '<div class="bts_del jj_del" data-id=' + item.project.id + '><a href="html/project_detaile.html?project=' + item.project.id + '">' + '<div class="jj_title">' + '<div class="jj_title_l"><img src=' + item.project.logo + '/></div>' + '<div class="jj_title_r">' + '<h3>' + item.project.title + '<span>' + item.project.brief + '</span></h3>';
+                        html += '<div class="bts_del jj_del" data-id=' + item.project.id + '><a href="html/project_detaile.html?project=' + item.project.id + '">' + '<div class="jj_title">' + '<div class="jj_title_l"><img src=' + item.project.logo + '/></div>' + '<div class="jj_title_r">' + '<h3>' + item.project.title + '</h3>';
                         if (item.project.amount != undefined) {
                             html += '<p>融资' + item.project.amount + '万' + ' ' + txt[item.project.status] + '</p>';
                         }
@@ -118,10 +118,10 @@
                         }
                         html += '</div>' + '</div>' + '<dl> ' + '<dt>';
                         if (item.project.cover != undefined) {
-                            html += '<img  class="dt_bg" src="' + item.project.cover + '?imageMogr2/thumbnail/!298x125r/gravity/Center/crop/298x125" alt="">';
+                            html += '<img  class="dt_bg" src="' + item.project.cover + '" alt="">';
                         }
                         else {
-                            html += '<img src="images/default-cover.png" alt="">';
+                            html += '<img src="images/list_fixedasset.png" alt="">';
                         }
                         html += '</dt>' + '<dd>' + '<p>';
                         if (item.project.priseName !== undefined) {

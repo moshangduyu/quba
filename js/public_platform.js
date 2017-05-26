@@ -30,7 +30,7 @@
                         var html = "";
                         $.each(res.data.rows, function (i, e) {
                             var date = new Date(e.publishTime);
-                            html += '<a href="public_detaile-sale.html?id=' + e.id + '&catalog=excellent.example"><dl class="pp_dl"><dt><img src="' + (e.cover || "/images/default-cover.png") + '" alt=""></dt><dd>' + '<h3>' + e.title + '</h3>' + '<p><span>发布日期: <b>' + date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate() + '</span>' + '</p>' + '</dd></dl></a>';
+                            html += '<a href="public_detaile-sale.html?id=' + e.id + '&catalog=excellent.example"><dl class="pp_dl"><dt><img src="' + (e.cover || "../images/default-cover2.png") + '" alt=""></dt><dd>' + '<h3>' + e.title + '</h3>' + '<p><span>发布日期: <b>' + date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate() + '</span>' + '</p>' + '</dd></dl></a>';
                         });
                         if (loading == 'true') {
                             $('.youhui_list').append(html);

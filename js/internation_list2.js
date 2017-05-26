@@ -10,27 +10,90 @@
         var title = ""
             , currentPage = 1
             , loading = 'false'
-            , typeIdx = 0;
+            , typeIdx = 2;
         /*筛选点击按钮*/
         var $li = $('#property_type>ul').find('li');
         $li.click(function () {
             $(this).addClass('onSelect').siblings('li').removeClass('onSelect');
             typeIdx = $(this).index();
+            $('.content_list>div').hide();
             currentPage = 1;
             loading = 'false'
             if (typeIdx == 0) {
-                $('.bidding_list').hide()
                 $('.long_list').show();;
-                longAjax()
+                longAjax();
             }
-            else {
-                $('.long_list').hide();
+            else if (typeIdx == 1) {
                 $('.bidding_list').show();
-                biddingAjax()
+                biddingAjax();
             }
         });
+        //重置按钮
+        $('.reset').click(function () {
+            $('#property_type>ul').find('li').removeClass('onSelect');
+            typeIdx = 2;
+            currentPage = 1;
+            loading = 'false'
+            allAjax();
+        });
         //页面渲染
-        longAjax()
+        allAjax();
+
+        function allAjax() {
+            $.ajax({
+                type: "GET"
+                , url: protUrl + "/int/createDesc/fixedassets"
+                , data: {
+                    title: title
+                    , currentPage: currentPage
+                    , pageSize: 10
+                }
+                , jsonp: "jsoncallback"
+                , success: function (res) {
+                    var html = ""
+                    totalNum = res.data.total;
+                    $('.screenNum').text(totalNum);
+                    if (totalNum != 0) {
+                        $.each(res.data.rows, function (i, item) {
+                            html += ' <div class="bts_del">' + '<a href="longterm_fixedassetDetaile.html?fixedasset=' + item.id + '">' + '<h2>' + item.title + '</h2>' + '<dl> <dt>';
+                            if (item.cover == undefined) {
+                                html += '<img class="dt_bg" src="../images/list_fixedasset.png" alt="">';
+                            }
+                            else {
+                                html += '<img class="dt_bg" src="' + item.cover + '?imageMogr2/thumbnail/!298x224r/gravity/Center/crop/298x224" alt="">';
+                            }
+                            html += '</dt>' + '<dd>' + '<p><span>' + item.typeName + '</span>' + '<span>' + item.regionFullName + '</span></p>' + '<div class="pre">';
+                            html += '<p style="height:.2rem"></p>';
+                            if (item.isMarkedPrice == false) {
+                                html += '<p>转让价格：<span>面议</span></p>';
+                            }
+                            else {
+                                if (item.currency == 'CNY') {
+                                    html += '<p>转让价格：<span>￥' + (item.price / 10000) + '万</span></p>';
+                                }
+                                else {
+                                    html += '<p>转让价格：<span>$' + (item.price / 10000) + '万</span></p>';
+                                }
+                            }
+                            html += '</div>' + '</dd>' + '</dl>' + '</a>' + '</div>';
+                        });
+                        if (loading == 'true') {
+                            $('.all_list').append(html);
+                        }
+                        else {
+                            $('.all_list').html(html);
+                        };
+                        myScroll.refresh();
+                        pageCount = res.data.totalPages;
+                        currentPage++;
+                        isPulled = true;
+                    }
+                    else {
+                        //                        $('.long_list').html("暂无数据");
+                    }
+                }
+            });
+        }
 
         function longAjax() {
             //7.3长期固定资产转让
@@ -51,7 +114,7 @@
                         $.each(res.data.rows, function (i, item) {
                             html += ' <div class="bts_del">' + '<a href="longterm_fixedassetDetaile.html?fixedasset=' + item.id + '">' + '<h2>' + item.title + '</h2>' + '<dl> <dt>';
                             if (item.cover == undefined) {
-                                html += '<img class="dt_bg" src="/images/default-cover.png" alt="">';
+                                html += '<img class="dt_bg" src="../images/list_fixedasset.png" alt="">';
                             }
                             else {
                                 html += '<img class="dt_bg" src="' + item.cover + '?imageMogr2/thumbnail/!298x224r/gravity/Center/crop/298x224" alt="">';
@@ -108,7 +171,7 @@
                         $.each(res.data.rows, function (i, item) {
                             html += ' <div class="bts_del">' + '<a href="jinjia_fixedassetDetaile.html?fixedasset=' + item.id + '">' + '<h2>' + item.title + '</h2>' + '<dl> <dt>';
                             if (item.cover == undefined) {
-                                html += '<img class="dt_bg" src="/images/default-cover.png" alt="">';
+                                html += '<img class="dt_bg" src="../images/list_fixedasset.png" alt="">';
                             }
                             else {
                                 html += '<img class="dt_bg" src="' + item.cover + '?imageMogr2/thumbnail/!298x224r/gravity/Center/crop/298x224" alt="">';
@@ -173,10 +236,13 @@
                 console.log(currentPage)
                 if (currentPage <= pageCount) {
                     loading = 'true';
-                    if (typeIdx == 0) {
+                    if (typeIdx == 2) {
+                        allAjax()
+                    }
+                    else if (typeIdx == 0) {
                         longAjax()
                     }
-                    else {
+                    else if (typeIdx == 1) {
                         biddingAjax()
                     }
                 }
@@ -188,10 +254,13 @@
             title = decodeURI($('.searchIpu').val());
             currentPage = 1;
             loading = 'false';
-            if (typeIdx == 0) {
+            if (typeIdx == 2) {
+                allAjax()
+            }
+            else if (typeIdx == 0) {
                 longAjax()
             }
-            else {
+            else if (typeIdx == 1) {
                 biddingAjax()
             }
         });
@@ -199,10 +268,13 @@
             title = decodeURI($(this).val());
             currentPage = 1;
             loading = 'false';
-            if (typeIdx == 0) {
+            if (typeIdx == 2) {
+                allAjax()
+            }
+            else if (typeIdx == 0) {
                 longAjax()
             }
-            else {
+            else if (typeIdx == 1) {
                 biddingAjax()
             }
         });

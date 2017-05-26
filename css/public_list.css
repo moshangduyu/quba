@@ -299,14 +299,9 @@ nav span.selectNav {
 }
 
 .jj_title_r>p {
-    font-size: .18rem;
+    font-size: .24rem;
     width: 100%;
-    overflow: hidden;
-    color: #9a9a9a;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
+    color: #0077a2;
 }
 
 .jj_title_r h3 span {
@@ -342,11 +337,24 @@ nav span.selectNav {
     float: left;
 }
 
+
 .pp_dl>dt img {
     width: 1.06rem;
     height: 1.06rem;
     display: block;
     margin: .3rem auto;
+}
+
+/*
+.list_cover {
+    width: 1.06rem;
+    height: 1.06rem;
+    margin: .3rem auto;
+}
+*/
+
+.list_cover>img {
+    display: none;
 }
 
 .pp_dl>dd {

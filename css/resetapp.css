@@ -288,3 +288,12 @@ main {
     width: .3rem;
     height: .3rem;
 }
+
+
+/**
+ * 让内容详情中的嵌入视频不会溢出屏幕
+ */
+.note-video-clip{
+    width: 6rem;
+    height: 3.75rem;
+}

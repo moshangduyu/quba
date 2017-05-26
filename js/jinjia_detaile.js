@@ -31,10 +31,10 @@
                         var bidRang = (bidRangeNum / 10000) + '万';
                     }
                     if (res.data.cover == undefined) {
-                        DetaileCard += '<div class="banner"><img src="../images/common/banner_tech.png"  alt=""></div>';
+                        DetaileCard += '<div class="banner"><img src="../images/default-cover1.png" style="display:none"></div>';
                     }
                     else {
-                        DetaileCard += '<div class="banner"><img src="' + res.data.cover + '"  alt=""></div>';
+                        DetaileCard += '<div class="banner"><img src="' + res.data.cover + '" style="display:none"></div>';
                     }
                     DetaileCard += ' <div class="centerBox center1">' + '<h1 class="title">' + res.data.title + '</h1>' + '<div>' + '<p>行业领域：<b>' + res.data.industryName + '</b></p>';
                     var code = res.data.techTypePath.split(',');
@@ -106,6 +106,13 @@
                     }
                     $('.ajaxCenter').html(DetaileCard);
                     myScroll.refresh();
+                    $(".banner>img").load(function () {
+                        $.cropImg({
+                            coverBox: $('.banner')
+                            , Img: $('.banner>img')
+                            , src: $('.banner>img').attr('src')
+                        });
+                    })
                 }
             });
             $.ajax({

@@ -21,10 +21,10 @@
                     // 详情页基本资料卡片
                     var DetaileCard = '';
                     if (res.data.cover == undefined) {
-                        DetaileCard += '<div class="banner"><img src="../images/common/banner_fixedasset.png"  alt=""></div>';
+                        DetaileCard += '<div class="banner"><img src="../images/default-cover1.png" style="display:none"></div>';
                     }
                     else {
-                        DetaileCard += '<div class="banner"><img src="' + res.data.cover + '"  alt=""></div>';
+                        DetaileCard += '<div class="banner"><img src="' + res.data.cover + '" style="display:none"></div>';
                     }
                     DetaileCard += ' <div class="centerBox center1">' + '<h1 class="title">' + res.data.title + '</h1>' + '<div>' + '<p>资产类型：<b>' + res.data.typeName + '</b></p>\
                             <p>资产所在地：<b>' + res.data.regionFullName + '</b></p>\
@@ -64,6 +64,13 @@
                     }
                     $('.ajaxCenter').html(DetaileCard);
                     myScroll.refresh();
+                    $(".banner>img").load(function () {
+                        $.cropImg({
+                            coverBox: $('.banner')
+                            , Img: $('.banner>img')
+                            , src: $('.banner>img').attr('src')
+                        });
+                    })
                 }
             })
         }

@@ -98,6 +98,7 @@
                     });
                 }
             });
+            optionSize($('.option-main li'));
             /*重置按钮*/
             $('.reset').click(function () {
                 $.each($('.option-main li'), function () {

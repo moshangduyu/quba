@@ -30,7 +30,7 @@
                         var html = "";
                         $.each(res.data.rows, function (i, e) {
                             var date = new Date(e.publishTime);
-                            html += '<a href="public_detaile-sale.html?id=' + e.id + '"><dl class="pp_dl"><dt><img src="' + (e.cover || "/images/default-cover.png") + '" alt=""></dt><dd>' + '<h3>' + e.title + '</h3>' + '<p><span>' + e.catalog.name + '<b></b></span><span style="margin-left:.32rem">发布日期: <b>' + date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate() + '</b></span>' + '</p>' + '</dd></dl></a>';
+                            html += '<a href="public_detaile-sale.html?id=' + e.id + '"><dl class="pp_dl"><dt><div class="list_cover"><img src="' + (e.cover || "../images/default-cover2.png") + '"></div></dt><dd>' + '<h3>' + e.title + '</h3>' + '<p><span>' + e.catalog.name + '<b></b></span><span style="margin-left:.32rem">发布日期: <b>' + date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate() + '</b></span>' + '</p>' + '</dd></dl></a>';
                         });
                         if (loading == 'true') {
                             $('.zhaozu_list').append(html);
@@ -39,6 +39,17 @@
                             $('.zhaozu_list').html(html);
                         };
                         myScroll.refresh();
+                        //                        $.each($('.list_cover'), function (i, b) {
+                        //                            var $coverBox = $(this)
+                        //                                , $Img = $(this).find('img');
+                        //                            $Img.load(function () {
+                        //                                $.cropImg({
+                        //                                    coverBox: $coverBox
+                        //                                    , Img: $Img
+                        //                                    , src: $Img.attr('src')
+                        //                                });
+                        //                            })
+                        //                        })
                         pageCount = res.data.totalPages;
                         currentPage++;
                         isPulled = true;

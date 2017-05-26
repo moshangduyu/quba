@@ -62,9 +62,9 @@
                                 parentList += '<li data-key="' + el.code + '">' + el.name + '</li>';
                             });
                         }
-                        else {
-                            $.each(item.childs, function (index, el) {
-                                noParentList += '<li data-key="' + item.code + '">' + item.name + '</li>';
+                        else if (item.code == 200) {
+                            $.each(item.childs, function (i, b) {
+                                noParentList += '<li data-key="' + b.code + '">' + b.name + '</li>';
                             });
                         }
                     })
@@ -158,6 +158,7 @@
                     });
                 }
             });
+            optionSize($('.option-main li'));
             /*重置按钮*/
             $('.reset').click(function () {
                 $.each($('.option-main li'), function () {

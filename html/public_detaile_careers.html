@@ -99,21 +99,22 @@
             <div class="menuBtn"></div>
         </header>
         <main class="wraps" id="wrapper">
-            <div class="wrap-row title" style="margin-top: 0;">
-                <div class="wrap-center">
-                    <h2 id="title">CTO(首席技术官)</h2>
-                    <p><i id="salaryMin"></i>-<i id="salaryMax"></i> / <i id="regionFullName"></i> / 工作<i id="experienceName"></i> / <i id="degreeName"></i> / <i id="jobTypeName"></i></p>
-                    <div><span> <i class="company"></i>招聘</span><span style="padding-left:.4rem">发布日期：<i id="publishTime"></i> </span></div>
+            <div>
+                <div class="wrap-row title" style="margin-top: 0;">
+                    <div class="wrap-center">
+                        <h2 id="title">CTO(首席技术官)</h2>
+                        <p><i id="salaryMin"></i>-<i id="salaryMax"></i> / <i id="regionFullName"></i> / 工作<i id="experienceName"></i> / <i id="degreeName"></i> / <i id="jobTypeName"></i></p>
+                        <div><span> <i class="company"></i>招聘</span><span style="padding-left:.4rem">发布日期：<i id="publishTime"></i> </span></div>
+                    </div>
+                    <ul class="tabs-header">
+                        <li class="active" data-for="de">职位描述</li>
+                        <li data-for="info">公司介绍</li>
+                    </ul>
                 </div>
-                <ul class="tabs-header">
-                    <li class="active" data-for="de">职位描述</li>
-                    <li data-for="info">公司介绍</li>
-                </ul>
-            </div>
-            <div class="wrap-row careers-detaile">
-                <div class="wrap-center">
-                    <div class=" carees-detaile-left"> <pre id="jobDescription" class="tabs-content de"></pre> <pre id="companyDescription" class="tabs-content info" hidden></pre> </div>
-                    <!--
+                <div class="wrap-row careers-detaile">
+                    <div class="wrap-center">
+                        <div class=" carees-detaile-left"> <pre id="jobDescription" class="tabs-content de"></pre> <pre id="companyDescription" class="tabs-content info" hidden></pre> </div>
+                        <!--
                     <div class=" carees-detaile-right">
                         <ul>
                             <li><span>公司名称:</span> <span id="company"></span></li>
@@ -124,6 +125,7 @@
                         </ul>
                     </div>
 --></div>
+                </div>
             </div>
         </main>
         <div class="menu">
@@ -160,9 +162,10 @@
         </div>
     </div>
     <script src="../js/src/jquery.min.js"></script>
-    <!--    <script src="../js/src/iscroll-probe.js"></script>-->
+    <script src="../js/src/iscroll-probe.js"></script>
     <script src="../js/public.js"></script>
-    <script coolie src="js/lib/coolie/coolie.min.js" data-config="../../conf/coolie-config.js" data-main="../../main/public_detaile_careers.js"></script>
+    <script src="../js/public_detaile_careers.js"></script>
+    <!--    <script coolie src="js/lib/coolie/coolie.min.js" data-config="../../conf/coolie-config.js" data-main="../../main/public_detaile_careers.js"></script>-->
 </body>
 
 </html>
