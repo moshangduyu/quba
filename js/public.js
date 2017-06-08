@@ -1,5 +1,6 @@
-/*定义接口全局变量*/
-var protUrl = "http://sit.quba360.com/web";
+﻿/*定义接口全局变量*/
+//var protUrl = "http://hiifeng.com/web";
+var protUrl = "/web";
 /*----截取地址栏信息----------------*/
 function GetQueryString(name) {
     var url = decodeURI(location.search);

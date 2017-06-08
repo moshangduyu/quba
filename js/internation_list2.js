@@ -20,7 +20,7 @@
             currentPage = 1;
             loading = 'false'
             if (typeIdx == 0) {
-                $('.long_list').show();;
+                $('.long_list').show();
                 longAjax();
             }
             else if (typeIdx == 1) {
@@ -31,6 +31,8 @@
         //重置按钮
         $('.reset').click(function () {
             $('#property_type>ul').find('li').removeClass('onSelect');
+            $('.content_list>div').hide();
+            $('.all_list').show();
             typeIdx = 2;
             currentPage = 1;
             loading = 'false'
