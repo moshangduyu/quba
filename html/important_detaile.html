@@ -26,6 +26,9 @@
         
         #wrapper {
             overflow-y: scroll;
+        }
+        
+        .detaile-left {
             padding: 0 .2rem;
         }
         
@@ -39,18 +42,33 @@
         #title {
             line-height: .48rem;
             font-size: .34rem;
-            padding: .43rem .2rem 0;
+            padding: .43rem 0 0;
         }
         
         .detaile-key {
             font-size: .24rem;
             color: #9a9a9a;
-            padding: .2rem;
+            padding: .2rem 0;
         }
         
         #publish-time {
             padding-left: .2rem;
         }
+        
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            text-align: center;
+            color: #666;
+        }
+        
+        td {
+            font-size: .2rem;
+            border: 1px solid #e8e8e8;
+            vertical-align: middle;
+            padding: .1rem ;
+        }
+
     </style>
 </head>
 
@@ -63,8 +81,10 @@
         </header>
         <main id="wrapper">
             <div class="iscroll">
+                <div class="banner" style="height:4rem"><img src="" alt="" style="display:none"></div>
                 <!--                <div class="wrap-center innovation-detaile">-->
                 <div class="detaile-left">
+
                     <div class="detaile-title" id="title"> </div>
                     <div class="detaile-key"> <span id="catalog"></span><span id="publish-time"></span> </div>
                     <div class="detaile-article" id="content"> </div>

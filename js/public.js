@@ -1,4 +1,4 @@
-﻿/*定义接口全局变量*/
+/*定义接口全局变量*/
 //var protUrl = "http://hiifeng.com/web";
 var protUrl = "/web";
 /*----截取地址栏信息----------------*/
@@ -37,8 +37,7 @@ function backTop(myScroll) {
     myScroll.on("scroll", function () {
         if (-this.y >= $(window).height()) {
             $(".backTop").show();
-        }
-        else {
+        } else {
             $(".backTop").hide();
         }
     });
@@ -54,11 +53,10 @@ function optionSize($option) {
             $(this).css({
                 "font-size": .24 + "rem"
             })
-        }
-        else if (len > 6) {
+        } else if (len > 6) {
             $(this).css({
-                "font-size": .2 + "rem"
-                , "line-height": .34 + "rem"
+                "font-size": .2 + "rem",
+                "line-height": .34 + "rem"
             })
         }
     });
@@ -85,8 +83,7 @@ function stretch($li) {
             $(this).find('span>img').toggleClass('onChangeTop');
             $li.eq(8).nextAll("li").toggle();
         });
-    }
-    else {
+    } else {
         $('.stretch').find('img').hide();
     }
 }
@@ -94,72 +91,70 @@ function stretch($li) {
 var hintCover = false;
 $.extend({
     cropImg: function (opts) {
-        var coverW = opts.coverBox.width()
-            , coverH = opts.coverBox.height()
-            , coverScale = coverW / coverH;
-        var imgW = opts.Img.width()
-            , imgH = opts.Img.height()
-            , imgScale = imgW / imgH;
+        var coverW = opts.coverBox.width(),
+            coverH = opts.coverBox.height(),
+            coverScale = coverW / coverH;
+        var imgW = opts.Img.width(),
+            imgH = opts.Img.height(),
+            imgScale = imgW / imgH;
         if (coverScale > imgScale) {
             opts.coverBox.css({
-                "background-image": "url(" + opts.src + ")"
-                , "background-repeat": "no-repeat"
-                , "background-position": "center"
-                , "background-size": 100 + "%" + "auto"
+                "background-image": "url(" + opts.src + ")",
+                "background-repeat": "no-repeat",
+                "background-position": "center",
+                "background-size": 100 + "%" + "auto"
             })
-        }
-        else if (coverScale < imgScale) {
+        } else if (coverScale < imgScale) {
             opts.coverBox.css({
-                "background-image": "url(" + opts.src + ")"
-                , "background-repeat": "no-repeat"
-                , "background-position": "center"
-                , "background-size": "auto " + 100 + "%"
+                "background-image": "url(" + opts.src + ")",
+                "background-repeat": "no-repeat",
+                "background-position": "center",
+                "background-size": "auto " + 100 + "%"
             })
         }
-    }
-    , popupCover: function (opts) {
+    },
+    popupCover: function (opts) {
         var defaults = {
-            content: ''
-            , showTime: 2000
-            , positionTop: 80 + "%"
-            , background: '#000000'
-            , color: 'white'
-            , pater: $('body')
-            , callback: ''
-        , }
+            content: '',
+            showTime: 2000,
+            positionTop: 80 + "%",
+            background: '#000000',
+            color: 'white',
+            pater: $('body'),
+            callback: '',
+        }
         var option = $.extend({}, defaults, opts);
         if (hintCover) {
             $(".hintCover").css({
                 "display": "block"
             }).fadeIn(500).delay(option.showTime).fadeOut(500, option.callback);
-        }
-        else {
+        } else {
             option.pater.append('<div class="hintCover"><div class="hintPopup"></div></div>');
             option.pater.css({
                 "position": "relative"
             });
             $('.hintCover').css({
-                "display": "none"
-                , "position": "absolute"
-                , "top": 0
-                , "left": 0
-                , "width": 100 + "%"
-                , "height": 100 + "%"
+                "display": "none",
+                "position": "absolute",
+                "top": 0,
+                "left": 0,
+                "width": 100 + "%",
+                "height": 100 + "%"
             });
             $('.hintPopup').text(option.content).css({
-                "position": "absolute"
-                , "top": option.positionTop
-                , "left": 50 + "%"
-                , "transform": "translate(-50% ,-50%)"
-                , "-webkit-transform": "translate(-50% ,-50%)"
-                , "padding-left": .25 + "rem"
-                , "padding-right": .25 + "rem"
-                , "line-height": .6 + "rem"
-                , "background": option.background
-                , "opacity": .8
-                , "color": option.color
-                , "font-size": .26 + "rem"
-                , "border-radius": .15 + "rem"
+                "position": "absolute",
+                "top": option.positionTop,
+                "left": 50 + "%",
+                "transform": "translate(-50% ,-50%)",
+                "-webkit-transform": "translate(-50% ,-50%)",
+                "padding-left": .25 + "rem",
+                "padding-right": .25 + "rem",
+                "line-height": .6 + "rem",
+                "background": option.background,
+                "opacity": .8,
+                "color": option.color,
+                "font-size": .26 + "rem",
+                "border-radius": .15 + "rem"
             });
             $(".hintCover").css({
                 "display": "block"

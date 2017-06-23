@@ -58,7 +58,7 @@
                     if (totalNum != 0) {
                         $.each(res.data.rows, function (i, item) {
                             var code = item.techTypePath.split(',');
-                            html += ' <div class="bts_del">' + '<a href="jinjia_detaile.html?tech=' + item.id + '">' + '<h2>' + item.title + '</h2>' + '<dl> <dt>';
+                            html += ' <div class="bts_del">' + '<a href="longterm_detaile.html?tech=' + item.id + '">' + '<h2>' + item.title + '</h2>' + '<dl> <dt>';
                             if (item.cover == undefined) {
                                 html += '<img class="dt_bg" src="../images/list_fixedasset.png" alt="">';
                             }
@@ -73,25 +73,26 @@
                                 html += '<span>' + item.techTypeName + '</span>' + '<span>' + item.industryName + '</span>' + '<span>' + item.maturityName + '</span>'
                             }
                             html += '</p>' + '<div class="pre">';
-                            if (item.currency == "CNY") {
-                                html += '<p>转让底价：<span>￥' + (item.startPrice / 10000) + '万</span></p>';
-                                if (item.bidRange >= 10000) {
-                                    html += '<p>加价幅度：<span>￥' + (item.bidRange / 10000) + '万</span></p>';
+                            $.each(item.prices, function (index, el) {
+                                if (item.prices.length == 1) {
+                                    html += '<p style="height:.2rem"></p>';
+                                    if (el.isMarkedPrice == false) {
+                                        html += '<p>' + el.tradingModeName + '：<span>面议</span></p>';
+                                    }
+                                    else {
+                                        html += '<p>' + el.tradingModeName + '：<span>￥' + el.price + '万</span></p>';
+                                    }
                                 }
                                 else {
-                                    html += '<p>加价幅度：<span>￥' + item.bidRange + '元</span></p>';
+                                    if (el.isMarkedPrice == false) {
+                                        html += '<p>' + el.tradingModeName + '：<span>面议</span></p>';
+                                    }
+                                    else {
+                                        html += '<p>' + el.tradingModeName + '：<span>￥' + el.price + '万</span></p>';
+                                    }
                                 }
-                            }
-                            else {
-                                html += '<p>转让底价：<span>$' + (item.startPrice / 10000) + '万</span></p>';
-                                if (item.bidRange >= 10000) {
-                                    html += '<p>加价幅度：<span>$' + (item.bidRange / 10000) + '万</span></p>';
-                                }
-                                else {
-                                    html += '<p>加价幅度：<span>$' + item.bidRange + '元</span></p>';
-                                }
-                            }
-                            html += '</div>' + '</dd>' + '</dl>' + '</a>' + '</div>';
+                                html += '</div>' + '</dd>' + '</dl>' + '</a>' + '</div>';
+                            });
                         });
                         if (loading == 'true') {
                             $('.all_list').append(html);

@@ -2,20 +2,29 @@
 (function ($) {
     window.onload = function () {
         var myScroll = new IScroll('#wrapper', {
-            probeType: 3
-            , scrollbars: true
-            , click: true
+            probeType: 3,
+            scrollbars: true,
+            click: true
         });
         var _id = GetQueryString('id');
         var _catalog = GetQueryString('catalog');
+        var _cover = GetQueryString('importantCover');
+        $(".banner>img").attr('src', _cover)
+        $(".banner>img").load(function () {
+            $.cropImg({
+                coverBox: $('.banner'),
+                Img: $('.banner>img'),
+                src: $('.banner>img').attr('src')
+            });
+        })
         $.ajax({
-            type: "get"
-            , url: protUrl + '/content/info'
-            , dataType: 'json'
-            , data: {
+            type: "get",
+            url: protUrl + '/content/info',
+            dataType: 'json',
+            data: {
                 content: _id
-            }
-            , success: function (res) {
+            },
+            success: function (res) {
                 $("#title").text(res.data.title);
                 $("#content").html(res.data.body);
                 $("#catalog").text(res.data.catalog.name);

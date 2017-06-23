@@ -2,32 +2,32 @@
 (function ($) {
     window.onload = function () {
         var myScroll = new IScroll('#wrapper', {
-            probeType: 3
-            , scrollbars: true
-            , click: true
-                //            , bounce: false
+            probeType: 3,
+            scrollbars: true,
+            click: true
+            //            , bounce: false
         });
-        var title = ""
-            , catalog = "" //类目
-            
-            , currentPage = 1
-            , loading = 'false';
+        var title = "",
+            catalog = "" //类目
+
+            ,
+            currentPage = 1,
+            loading = 'false';
         /*获取选项列表*/
         optionList();
 
         function optionList() {
             $.ajax({
-                type: "get"
-                , url: protUrl + "/content/important/information/catalogs"
-                , data: {}
-                , jsonp: "jsoncallback"
-                , success: function (res) {
+                type: "get",
+                url: protUrl + "/content/important/information/catalogs",
+                data: {},
+                jsonp: "jsoncallback",
+                success: function (res) {
                     var html = ""
                     $.each(res.data, function (i, e) {
                         if (e.name.length >= 5) {
                             html += '<li data-code=' + e.code + ' style="font-size:.24rem">' + e.name + '</li>';
-                        }
-                        else {
+                        } else {
                             html += '<li data-code=' + e.code + '>' + e.name + '</li>';
                         }
                     });
@@ -38,8 +38,7 @@
                         $(this).toggleClass('onSelect').siblings('li').removeClass('onSelect');
                         if ($(this).hasClass('onSelect')) {
                             catalog = $(this).data('code');
-                        }
-                        else {
+                        } else {
                             catalog = '';
                         }
                         currentPage = 1;
@@ -66,34 +65,32 @@
 
         function searchAjax() {
             $.ajax({
-                type: "get"
-                , url: protUrl + "/content/contents"
-                , data: {
-                    title: title
-                    , currentPage: currentPage
-                    , catalog: catalog
-                    , pageSize: 10
-                    , period: ''
-                }
-                , jsonp: "jsoncallback"
-                , success: function (res) {
+                type: "get",
+                url: protUrl + "/content/contents",
+                data: {
+                    title: title,
+                    currentPage: currentPage,
+                    catalog: catalog,
+                    pageSize: 10,
+                    period: ''
+                },
+                jsonp: "jsoncallback",
+                success: function (res) {
                     var html = "";
                     $('.screenNum').text(res.data.total);
                     $.each(res.data.rows, function (i, e) {
                         var date = new Date(e.publishTime);
-                        html += '<a href="important_detaile.html?id=' + e.id + '&catalog=' + catalog + '"><dl class="pp_dl">' + '<dt>';
+                        html += '<a href="important_detaile.html?id=' + e.id + '&catalog=' + catalog + '&importantCover=' + e.cover + '"><dl class="pp_dl">' + '<dt>';
                         if (e.cover == undefined) {
                             html += '<img src="../images/default-cover.png" alt="">';
-                        }
-                        else {
+                        } else {
                             html += '<img src=' + e.cover + '>';
                         }
                         html += '</dt>' + '<dd>' + '<h3>' + e.title + '</h3>' + '<p>' + '<span>信息类型: <b>' + e.catalog.name + '</b></span>' + '<span style="margin-left:.3rem">发布日期: <b>' + date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate() + '</span>' + '</p>' + '</dd>' + '</dl></a>';
                     });
                     if (loading == 'true') {
                         $('.chuangxin_list').append(html);
-                    }
-                    else {
+                    } else {
                         $('.chuangxin_list').html(html);
                     };
                     myScroll.refresh();
@@ -109,8 +106,8 @@
             startY = myScroll.y
         });
         myScroll.on('scroll', function () {
-            var height = this.y
-                , bottomHeight = height - this.maxScrollY;
+            var height = this.y,
+                bottomHeight = height - this.maxScrollY;
             // 控制上拉显示
             if (isPulled && bottomHeight <= 200) {
                 isPulled = false;
