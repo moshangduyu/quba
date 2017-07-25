@@ -1,6 +1,8 @@
 /*定义接口全局变量*/
+//var protUrl = "http://sit.quba360.com/web"; //测试接口
 //var protUrl = "http://hiifeng.com/web";
 var protUrl = "/web";
+var phonez = /^1[3|4|5|7|8]\d{9}$/;
 /*----截取地址栏信息----------------*/
 function GetQueryString(name) {
     var url = decodeURI(location.search);
@@ -87,6 +89,26 @@ function stretch($li) {
         $('.stretch').find('img').hide();
     }
 }
+var initFun = {
+    initView: function () {
+        this.loginStatus();
+    },
+    //判断登录状态
+    loginStatus: function () {
+        if (localStorage.userId) {
+            $('.notLogged').hide();
+            $('.logged').show();
+        } else {
+            $('.logged').hide();
+            $('.notLogged').show();
+        }
+    }
+}
+$(function () {
+    initFun.initView();
+})
+
+
 //自定义
 var hintCover = false;
 $.extend({
