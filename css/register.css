@@ -7,3 +7,76 @@
   text-align: center;
   line-height: 1.2rem;
 }
+main form {
+  margin-top: .7rem;
+}
+main form > p {
+  margin: 0 auto;
+  width: 5.06rem;
+  height: .8rem;
+  line-height: .8rem;
+  font-size: 0;
+  color: #272727;
+  border-bottom: .01rem solid #cfcfcf;
+}
+main form > p input {
+  font-size: .24rem;
+  color: #272727;
+  width: 100%;
+  height: .45rem;
+  line-height: .45rem;
+  margin-top: .175rem;
+  display: block;
+  float: left;
+}
+main form input[type=button] {
+  display: block;
+  margin: 0 auto;
+  width: 5.06rem;
+  height: .8rem;
+  margin-top: .8rem;
+  border-radius: .12rem;
+  border: 0;
+  color: #272727;
+  font-size: .3rem;
+  background: #f4d13f;
+}
+main form #v_container {
+  height: .6rem;
+  margin-top: .1rem;
+}
+main form .smsMessage {
+  text-align: right;
+  line-height: .8rem;
+  margin: 0 auto;
+  width: 5.06rem;
+  font-size: .24rem;
+  color: #aaaaaa;
+}
+main form #nextBtn {
+  margin-top: .5rem;
+}
+main form .especialInput > input {
+  width: 3.3rem;
+}
+main form .especialInput span {
+  display: block;
+  float: right;
+  text-align: right;
+  width: 1.7rem;
+  height: .8rem;
+  font-size: .24rem;
+}
+main > p {
+  width: 5.06rem;
+  margin: 0 auto;
+  line-height: .8rem;
+  color: #aaa;
+  font-size: .22rem;
+}
+main > p a {
+  color: #666;
+}
+main > p .forget_link {
+  float: right;
+}

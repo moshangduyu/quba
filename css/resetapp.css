@@ -176,6 +176,7 @@ body {
 
 main {
     -webkit-box-flex: 1;
+    overflow-y: scroll;
 }
 
 
